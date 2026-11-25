@@ -3,11 +3,11 @@ from pathlib import Path
 from shutil import copyfile
 from sys import stderr
 
-PICTURE = Path(__file__).parent / "entry.png"
+IMAGE = Path(__file__).parent / "entry.png"
 
 
 def run() -> int:
-    if not PICTURE.is_file():
+    if not IMAGE.is_file():
         print("entry.png missing", file=stderr)
         return 1
 
@@ -17,8 +17,8 @@ def run() -> int:
         or "/output"
     )
     folder.mkdir(parents=True, exist_ok=True)
-    saved = folder / PICTURE.name
-    copyfile(PICTURE, saved)
+    saved = folder / IMAGE.name
+    copyfile(IMAGE, saved)
     print(saved.stat().st_size, file=stderr)
     return 0
 
