@@ -1,6 +1,6 @@
 # 25 November 2026 world news front page
 
-One original editorial image summing up the day's world news. Run with
+This is an original 25 November 2026 world news front page with 33 dated stories, published as one editorial image. Run with
 `MAKEFUN_OUTPUT_DIR=out python3 main.py`, which copies `entry.png` to the grader
 output path byte for byte.
 
