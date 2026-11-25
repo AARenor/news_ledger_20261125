@@ -1,7 +1,13 @@
+"""Copy entry.png into the output directory and report the copied byte count."""
+
 from os import environ
 from pathlib import Path
 from shutil import copyfile
 from sys import stderr
+
+def report(size: int) -> None:
+    print(size, file=stderr)
+
 
 IMAGE = Path(__file__).parent / "entry.png"
 
@@ -19,7 +25,7 @@ def run() -> int:
     folder.mkdir(parents=True, exist_ok=True)
     saved = folder / IMAGE.name
     copyfile(IMAGE, saved)
-    print(saved.stat().st_size, file=stderr)
+    report(saved.stat().st_size)
     return 0
 
 
